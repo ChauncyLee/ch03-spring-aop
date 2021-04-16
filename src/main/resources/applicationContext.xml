@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.hz.spring.aop.aspect;com.hz.spring.aop.service.serviceimpl"/>
+    <!-- 声明自动代理生成器，创建代理 -->
+    <aop:aspectj-autoproxy/>
+<!--    <aop:aspectj-autoproxy/>的底层是由 AnnotationAwareAspectJAutoProxyCreator 实现的。-->
+<!--    从其类名就可看出，是基于 AspectJ 的注解适配自动代理生成器。-->
+<!--    其工作原理是，<aop:aspectj-autoproxy/>通过扫描找到@Aspect 定义的切面类，再由切-->
+<!--    面类根据切入点找到目标类的目标方法，再由通知类型找到切入的时间点。-->
+</beans>
